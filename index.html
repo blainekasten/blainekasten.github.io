@@ -7,6 +7,16 @@
     <meta name="description" content="Blainekasten.github.io : My public profile" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <script src="javascripts/Blunder.js"></script>
+    <script src="javascripts/jquery.js"></script>
+    <script>
+        blunderParser = new Blunder
+        $(document).on('keyup', "#BlunderExample", function(){
+          parsedText = blunderParser.parseText($(this).val());
+          console.log(parsedText)
+          $("#BlunderRendered").html(parsedText);
+        });
+    </script>
 
     <title>Blainekasten.github.io</title>
   </head>
@@ -28,18 +38,26 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>Clean code is good code.</h3>
-
-<p></p><pre><code>[iOS];
-CoffeeScript ->
-Ruby do
-</code></pre></p>
-
+        <pre><code>
+          [iOS];
+          CoffeeScript ->
+          Ruby do
+        </code></pre><br>
     </div>
+
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3 style="display: inline;">Blunder.</h3> <a href="https://github.com/blainekasten/Blunder"> It's on Github!</a><br>
+        <textarea id="BlunderExample">^This is Blunder __Do__ ~Crazy~ [a]https://github.com/blainekasten/Blunder Things</textarea>
+        <div id="BlunderRendered" >
+          <b>This is Blunder</b> <u>Do</u> <i>Crazy</i> <a href="https://github.com/blainekasten/Blunder">Things</a> 
+        </div>
+    </div>
+
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
 
